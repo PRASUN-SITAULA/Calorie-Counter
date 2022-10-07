@@ -1,0 +1,61 @@
+{% extends 'base/navbar.html' %}
+{% block content %}
+
+<h4>{{total_calories}} calories consumed today</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <div class="text-success p-1"><h3>Breakfast</h3> <h6><a href="{% url 'details' %}"> View Details</a></h6></div>
+        <div class="row">
+          <div class="col-3">
+            <h3>Food</h3>
+          </div>
+          <div class="col-2">
+            <h3>Calories</h3>
+          </div>
+        </div>
+      {% for food in food_detail %}
+      <div class="row">
+        <div class="col-3">
+          {{food.name_of_food}}
+        </div>
+        <div class="col-3">
+          {{food.calorie}} 
+        </div>
+        <h6><a href="{% url 'update' food.id %}">Update</a> <a href="{% url 'delete' food.id %}">Delete</a> 
+      </div>
+      {% endfor %}
+      <a href="{% url 'add' %}"><button type="submit" class="btn btn-success">Add Food </button></a>
+    </div>
+  
+    <div class="col"> 
+      <div class="text-success p-1"><h3>Lunch</h3></div>
+      <div class="row">
+        <div class="col-4">
+          <h3>Food</h3>
+        </div>
+        <div class="col-4">
+          <h3>Calories</h3>
+        </div>
+      </div>
+    {% for lunch_food in lunch_details %}
+    <div class="row">
+      <div class="col-3">
+        {{lunch_food.name_of_food}}
+      </div>
+      <div class="col-3">
+        {{lunch_food.calorie}} 
+      </div>
+      <h6><a href="{% url 'update' lunch_food.id %}">Update</a> <a href="{% url 'delete' lunch_food.id %}">Delete</a> 
+    </div>
+    {% endfor %}
+      <a href="{% url 'add' %}"><button type="submit" class="btn btn-success">Add Food</button></a>
+    </div>
+
+    <div class="col">
+      <div class="text-success p-1"><h3>Dinner</h3></div>
+      <a href="{% url 'add' %}"><button type="submit" class="btn btn-success">Add Food </button></a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base/navbar.html' %}
+
+{% block content %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Do you want delete "{{food_details.name_of_food}}"</p>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-danger"><a href="{{ request.META.HTTP_REFERER }}">Go Back</a></button>
+</form>
+{% endblock content %}
