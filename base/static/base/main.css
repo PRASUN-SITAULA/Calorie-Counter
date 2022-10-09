@@ -1,0 +1,17 @@
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row-1{
+  display: flex;
+  margin: auto;
+  justify-content: end;
+  word-spacing: 5pt;
+  line-height: 7pt;
+}
+.row-2{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}

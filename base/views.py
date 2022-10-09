@@ -23,23 +23,14 @@ def home(request):
 
 def add_food(request):
     form =AddFoodForm()
-    lunch = AddFoodForm()
     if request.method == "POST":          # if the form has been submitted
         form = AddFoodForm(request.POST)
-        # lunch = AddFoodLunchForm(request.POST)
-        if 'breakfast' in request.POST:
-            if form.is_valid():                # checks if the form is valid or not
-                form.save()
-                return redirect(home)
-            else:
-                messages.error(request, "An error occurred!")
-        # if 'lunch' in request.POST:
-        #     if lunch.is_valid():
-        #         lunch.save()
-        #         return redirect(home)
-        #     else:
-        #         messages.error(request, "An error occurred!!")
-    return render(request, 'base/add_food.html', {'form': form, 'lunch': lunch})
+        if form.is_valid():                # checks if the form is valid or not
+            form.save()
+            return redirect(home)
+        else:
+            messages.error(request, "An error occurred!")
+    return render(request, 'base/add_food.html', {'form': form})
 
 
 def details(request):

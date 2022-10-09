@@ -6,9 +6,3 @@ class AddFoodForm(ModelForm):
     class Meta:
         model = AddFood
         fields = '__all__'
-        # exclude = ('calorie_goal')
-
-# class AddFoodLunchForm(ModelForm):
-#     class Meta:
-#         model = AddFoodLunch
-#         fields = '__all__'

@@ -10,12 +10,7 @@
     <a href="{request.META.HTTP_REFERER}"><button type="submit" class="btn btn-danger">Go back</button></a>
 </form>
 
-{% else %}
-<form action="" method="POST" name="lunch">
-    {% csrf_token %}
-    {{lunch.as_p}}
-    <button type="submit" class="btn btn-success" name="lunch">Add</button>
-    <a href="{request.META.HTTP_REFERER}"><button type="submit" class="btn btn-danger">Go back</button></a>
-</form>
 {% endif %}
+
+
 {% endblock content %}
