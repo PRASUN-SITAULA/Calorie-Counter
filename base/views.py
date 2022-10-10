@@ -99,16 +99,19 @@ def loginpage(request):
     else:
         return render(request, 'base/login.html', {})
 
-
-# def registeruser(request):
-#     form = UserCreationForm()
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-
-
 def logoutpage(request):
     logout(request)
     return redirect(home)
 
+
+def registeruser(request):
+    form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(home)
+        else:
+            messages.error(request,"Failed to register.")
+    else:
+        return render(request, 'base/register.html', {'form':form})
