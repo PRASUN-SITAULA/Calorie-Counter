@@ -2,7 +2,14 @@
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
+
+{% if messages %}
+    {% for message in messages %}
+        <h2>{{message}}</h2>
+    {% endfor %}
+{% endif %}
+
+{% if user.is_authenticated %}
 <div>
     <h3>
         <a href="{% url 'home' %}">Logout</a>
@@ -17,4 +24,5 @@
     <input type="submit" value="login">
 </form>
 {% endif %}
+
 {% endblock content %}
