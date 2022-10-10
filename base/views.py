@@ -1,8 +1,11 @@
 from ast import Add
+import re
 from django.shortcuts import render, redirect
 from .forms import AddFoodForm
 from django.contrib import messages
 from .models import AddFood
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def home(request):
@@ -81,4 +84,31 @@ def delete_food(request, pk):
         food_details.delete()
         return redirect(home)
     return render(request, 'base/delete.html', {'food_details': food_details})
+
+
+def loginpage(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect(home)
+        else:
+            messages.error(request, "you are not registered.")
+    else:
+        return render(request, 'base/login.html', {})
+
+
+# def registeruser(request):
+#     form = UserCreationForm()
+#     if request.method == "POST":
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+
+
+def logoutpage(request):
+    logout(request)
+    return redirect(home)
 

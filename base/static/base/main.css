@@ -1,13 +1,18 @@
 .row{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  border-radius: 25px;
+  /* padding: 20px;
+  width: 200px;
+  height: 150px; */
 }
+
 .row-1{
   display: flex;
   margin: auto;
-  justify-content: end;
-  word-spacing: 5pt;
+  justify-content: start;
+  word-spacing: 4pt;
   line-height: 7pt;
 }
 .row-2{
@@ -15,3 +20,4 @@
   margin: auto;
   justify-content: center;
 }
+
