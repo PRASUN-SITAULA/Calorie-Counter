@@ -7,21 +7,34 @@ from .models import AddFood
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login,logout
 
+
 # Create your views here.
 def home(request):
+    food_details = AddFood.objects.all()
     calories_consumed = []
-    total_calories = 0
-    food_detail = AddFood.objects.all()      # query data from the database
-    for calories in food_detail:
-        calories_consumed.append(calories.calorie)
-    for i in calories_consumed:
-        total_calories += i
-    # lunch_details = AddFoodLunch.objects.all()
+    protein_consumed = []
+    fats_consumed = []
+    carbs_consumed = []
+    for calories in food_details:
+        calories_consumed.append(calories.calorie)   # add calories value in list
+        protein_consumed.append(calories.protein)   # add protein value in list
+        fats_consumed.append(calories.fats)         # add fats value in list
+        carbs_consumed.append(calories.carbs)        # add carbs value in list
+
+    total_calories,total_protein,total_fats,total_carbs = 0,0,0,0
+    for c,p,f,b in zip(calories_consumed, protein_consumed,fats_consumed,carbs_consumed):
+        total_calories += c
+        total_protein += p
+        total_fats += f
+        total_carbs += b
+        
     context = {
-        'food_detail': food_detail, 
-        # 'lunch_details': lunch_details,
-        'total_calories': total_calories
-        }
+        'food_details': food_details, 
+        'total_calories': total_calories,
+        'total_protein': total_protein,
+        'total_fats': total_fats,
+        'total_carbs': total_carbs,
+    }
     return render(request, 'base/home.html', context)
 
 def add_food(request):
@@ -54,14 +67,13 @@ def details(request):
         total_protein += p
         total_fats += f
         total_carbs += b
-
     context = {
         'food_details': food_details, 
         'total_calories': total_calories,
         'total_protein': total_protein,
         'total_fats': total_fats,
         'total_carbs': total_carbs,
-        }
+    }
     return render(request, 'base/details.html', context)
 
 
