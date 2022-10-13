@@ -1,24 +1,24 @@
 .corners{
-  display: flex;
-  margin: auto;
-  border-radius: 25px;
-  background: #7690ad;
-  width: 500px;
+  border-radius: 30px;
+  background: #80c497;
   height: auto;
+  width: 380px;
+  left: 10%;
 }
 
 .row{
   display: flex;
   margin: auto;
-  float: left;
-  width: 350px;
-  left: 6%;
+  width: 300px;
+  left: 30%;
+  height: 10px;
   justify-content: start;
 }
+
 .row-1{
   display: flex;
   margin: 50px;
-  width: 700px;
+  width: 380px;
   height: auto;
   position: relative;
 }
@@ -31,7 +31,6 @@
   position: relative;
 }
  
-
 .col-3{
   display: flex;
   margin: auto;
@@ -42,23 +41,42 @@
 .cols{
   position: absolute;
   top: 50%;
-  left: 1%;
+  left: 0%;
 }
 
 .cols1{
   position: absolute;
   top: 50%;
-  left: 29%;
+  left: 40%;
 }
 .up{
   position: absolute;
-  top: 54%;
-  left: 45%;
-  margin: -3px 0 0 -25px;
+  top: 50%;
+  left: 60%;
+  margin: -1px 0 0 -25px;
 }
 .details{
   position: absolute;
   top: 70%;
   left: 16%;
+
+}
+
+.chart-container{
+  display: flex;
+  margin: auto;
+  float: right;
+  width: 400px;
+}
+#myChart{
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+
+.alert-success{
+  display: flex;
+  width: 450px;
+  height: 50px;
 
 }

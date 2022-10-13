@@ -1,57 +1,51 @@
 {% extends 'base/navbar.html' %}
 {% block content %}
 
-<h4>{{total_calories}} calories consumed today</h4>
-      
-      <div class="row">
-        <div class="col-3">
-          <h3>Food</h3>
-        </div>
-        <div class="col-3">
-          <h3>Calories</h3>
-        </div>
-      </div>
-      {% for food in food_details %}
-      <div class="row-1">
-        <div class="cols">
-          {{food.name_of_food}}  
-        </div>
-        <div class="cols1">
-          {{food.calorie}} 
-        </div>
-        <div class="up">
-          <h6><a href="{% url 'update' food.id %}">Update</a> <a href="{% url 'delete' food.id %}">Delete</a> 
-        </div>
-      </div>
-      {% endfor %}
-      <div class="row-2">
-        <a href="{% url 'add' %}"><button type="submit" class="btn btn-success">Add Food </button></a>
-      </div>
-      <div class="details">
-       <h6><a href="{% url 'details' %}"> View Details</a></h6>
-      </div>
+<div class="alert alert-success" role="alert">
+  <h5>{{total_calories}} calories consumed today</h5>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <h3>Food</h3>
+  </div>
+  <div class="col-3">
+    <h3>Calories</h3>
+  </div>
+</div>
+
+{% for food in food_details %}
+<div class="row-1">
+  <div class="cols">
+    {{food.name_of_food}}  
+  </div>
+  <div class="cols1">
+    {{food.calorie}} 
+  </div>
+  <div class="up">
+    <h6><a href="{% url 'update' food.id %}">Update</a> <a href="{% url 'delete' food.id %}">Delete</a> 
+  </div>
+</div>
+{% endfor %}
+
+<div class="row-2">
+  <a href="{% url 'add' %}"><button type="submit" class="btn btn-success">Add Food </button></a>
+</div>
+<div class="details">
+  <h6><a href="{% url 'details' %}"><button type="submit" class="btn btn-success">View Details</button></h6></a>
+</div>
+
     
-
-
-
 
   <!-- // for displaying charts -->
 <div class="row-end">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <div class="chart-container">
-  <canvas id="myChart" width="500" heigth="400"></canvas>
+    <canvas id="myChart" width="400" heigth="400"></canvas>
   </div>
 
-  <!-- //Positioning Chart in center -->
-  <style>
-      canvas{
-      margin-bottom: auto;
-      margin-left: auto;
-      position: relative;
-      top: 1px;
-      }
-  </style>
+  <!-- //Positioning Chart -->
 
   <script>
       const ctx = document.getElementById('myChart').getContext('2d');
