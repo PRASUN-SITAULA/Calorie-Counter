@@ -1,7 +1,7 @@
 from ast import Add
 import re
 from django.shortcuts import render, redirect
-from .forms import AddFoodForm
+from .forms import AddFoodForm, CustomUserCreationForm
 from django.contrib import messages
 from .models import AddFood
 from django.contrib.auth.forms import UserCreationForm
@@ -118,9 +118,9 @@ def logoutpage(request):
 
 
 def registeruser(request):
-    form = UserCreationForm()
+    form = CustomUserCreationForm()
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect(home)
