@@ -23,7 +23,7 @@
     {{food.calorie}} 
   </div>
   <div class="up">
-    <h6><a href="{% url 'update' food.id %}">Update</a> <a href="{% url 'delete' food.id %}">Delete</a> 
+    <h6><a href="{% url 'update' food.id %}"><span class="badge rounded-pill text-bg-success">Update</span></a> <a href="{% url 'delete' food.id %}"><span class="badge rounded-pill text-bg-success">Delete</span></a> 
   </div>
 </div>
 {% endfor %}
