@@ -5,9 +5,13 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    <p>Do you want delete "{{food_details.name_of_food}}"</p>
+    <div class="alert alert-danger" role="alert">
+        Do you want delete "{{food_details.name_of_food}} ?"
+    </div>
     <button type="submit" class="btn btn-success">Submit</button>
-    <a href="{{ request.META.HTTP_REFERER }}"><button type="submit" class="btn btn-danger">Go back</button></a>
 </form>
+
+<a href="{{ request.META.HTTP_REFERER }}"><button type="submit" class="btn btn-danger">Go back</button></a>
+
 
 {% endblock content %}

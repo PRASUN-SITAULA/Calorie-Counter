@@ -95,7 +95,8 @@ def delete_food(request, pk):
     if request.method == "POST":
         food_details.delete()
         return redirect(home)
-    return render(request, 'base/delete.html', {'food_details': food_details})
+    else:
+        return render(request, 'base/delete.html', {'food_details': food_details})
 
 
 def loginpage(request):
