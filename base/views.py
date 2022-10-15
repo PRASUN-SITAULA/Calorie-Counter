@@ -114,7 +114,7 @@ def loginpage(request):
 
 def logoutpage(request):
     logout(request)
-    return redirect(home)
+    return redirect(loginpage)
 
 
 def registeruser(request):
@@ -123,8 +123,7 @@ def registeruser(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(home)
+            return redirect(loginpage)
         else:
             messages.error(request,"Failed to register.")
-    else:
-        return render(request, 'base/register.html', {'form':form})
+    return render(request, 'base/register.html', {'form':form})
