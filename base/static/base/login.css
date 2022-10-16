@@ -1,7 +1,7 @@
 body{
 	margin:0;
-	color:#6a6f8c;
-	background:#d3eed9;
+	color:#799f8f;
+	background:#97cfa3;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
@@ -15,7 +15,7 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	background:no-repeat-center;
+	background:url("../images/strawberry.jpg") no-repeat-center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(40,57,101,.9);
+	background:rgba(45, 107, 79, 0.9);
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -56,7 +56,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-	color:#fff;
+	color:rgb(255, 255, 255);
 	border-color:#1161ee;
 }
 .login-form{
@@ -87,11 +87,11 @@ a{color:inherit;text-decoration:none}
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:#aaa;
+	color: white;
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#1161ee;
+	background:#208b46;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -99,7 +99,7 @@ a{color:inherit;text-decoration:none}
 	border-radius:2px;
 	position:relative;
 	display:inline-block;
-	background:rgba(255,255,255,.1);
+	background:rgba(255, 255, 255, 0.1);
 }
 .login-form .group label .icon:before,
 .login-form .group label .icon:after{
@@ -147,4 +147,5 @@ a{color:inherit;text-decoration:none}
 }
 .foot-lnk{
 	text-align:center;
+	color: white;
 }
