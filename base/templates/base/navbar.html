@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body >
-    <nav class="navbar bg-light">
+    <nav class="navbar" style="background-color:#e3fdfa; height:80px ;">
       <div class="container-fluid justify-content-center">
         <span class="badge rounded-pill text-bg-success"><h3>Healthy Food Healthy Body</h3></span>
       </div>
@@ -21,6 +21,7 @@
       </div>
       <div class="login">
             {% if user.is_authenticated %}
+            <h4>Hi, {{user.username}}</h4>
             <a href="{% url 'logout' %}"><button class="button">Logout</button></a>
             {% else %}
             <a href="{% url 'loginpage' %}"><button class="button">Login</button></a>

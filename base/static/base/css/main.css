@@ -74,7 +74,7 @@
 }
 #myChart{
   position: absolute;
-  top: 25%;
+  top: 15%;
   right: 10%;
 }
 
@@ -102,12 +102,6 @@
 
 }
 
-.navbar{
-  height: 80px;
-  color: #47bdb3;
-  
-}
-
 
 .logo{
   display: flex;
@@ -117,7 +111,7 @@
 }
 
 .login{
-  display: flex;
+  display: inline;
   top: 10px;
   right: 20px;
   margin: -80px 0 0 -10px;
@@ -133,3 +127,4 @@
   background-color: #b2d9b3; /* Green */
   color: white;
 }
+
