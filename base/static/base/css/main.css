@@ -101,3 +101,35 @@
   height: 55px;
 
 }
+
+.navbar{
+  height: 80px;
+  color: #47bdb3;
+  
+}
+
+
+.logo{
+  display: flex;
+  left: 10px;
+  top: 10px;
+  margin: -80px 0 0 -10px;
+}
+
+.login{
+  display: flex;
+  top: 10px;
+  right: 20px;
+  margin: -80px 0 0 -10px;
+}
+
+.button {
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  border-color: rgb(110, 168, 110);
+}
+
+.button:hover {
+  background-color: #b2d9b3; /* Green */
+  color: white;
+}
