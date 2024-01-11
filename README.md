@@ -15,8 +15,12 @@
   <a href="#license">License</a>
 </p>
 
+![landing](https://github.com/PRASUN-SITAULA/Calorie-Counter/assets/89672957/9008516d-b1c9-4ac3-8c67-ff9681bb665a)
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![detail](https://github.com/PRASUN-SITAULA/Calorie-Counter/assets/89672957/c01586a2-5b6f-4d40-a956-12578c9ca63a)
+
+![login](https://github.com/PRASUN-SITAULA/Calorie-Counter/assets/89672957/d0e28fea-5b60-4f46-a30b-c303c05686bd)
+
 
 ## Key Features
 
