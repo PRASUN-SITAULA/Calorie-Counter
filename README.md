@@ -36,7 +36,7 @@ $ git clone https://github.com/PRASUN-SITAULA/Calorie-Counter
 ```
 ### Go into the repository
 ```bash
-$ cd caloriecounter
+$ cd Calorie-Counter
 ```
 ### Install packages
 ```bash
